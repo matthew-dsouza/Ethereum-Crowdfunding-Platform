@@ -68,7 +68,7 @@ const CampaignDetails = () => {
                             </div>
                             <div>
                                 <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state.owner}</h4>
-                                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">10 Campaigns</p>
+                                <p className="mt-[4px] font-epilogue font-normal text-[12px] text-[#808191]">{donators.length} Campaigns</p>
                             </div>
                         </div>
                     </div>
@@ -109,6 +109,7 @@ const CampaignDetails = () => {
                                 type="number"
                                 placeholder="ETH 0.01"
                                 min={0.01}
+                                step={0.01}
                                 className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
