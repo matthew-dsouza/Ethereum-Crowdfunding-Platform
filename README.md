@@ -1,1 +1,1 @@
-# Ethereum-Kickstarter-Dapp-v7
+# StartKitt-Ethereum-Crowdfunding-Platform
