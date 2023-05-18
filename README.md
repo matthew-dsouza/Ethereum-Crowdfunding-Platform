@@ -40,6 +40,6 @@ npx hardhat run scripts/deploy.js --network YOUR_NETWORK_NAME
 Replace YOUR_NETWORK_NAME with the name of the desired network (e.g., goerli).
 Once the deployment is successful, the console will display the addresses of the deployed contracts. Update the contract addresses in the appropriate places in the frontend code (src/contracts folder).
 
-# License
+## License
 
 This project is licensed under the MIT License.
