@@ -11,20 +11,20 @@ Supports integration with the Metamask wallet for secure and seamless Ethereum t
 Built-in support for the Goerli testnet to facilitate testing and development.
 Prerequisites
 
-# To run the project locally, you need to have the following tools installed:
+## To run the project locally, you need to have the following tools installed:
 
 Node.js (v14 or above)
 npm (Node Package Manager)
 Metamask extension for your web browser
 Getting Started
 
-# Configuration
+## Configuration
 
 The project's configuration can be found in the hardhat.config.js file. You can modify the network settings to connect to different Ethereum networks.
 
 By default, the project is configured to use the Goerli testnet. To deploy the smart contracts and interact with the Goerli testnet, you need to have a Goerli testnet account with test Ether. You can obtain test Ether from the Goerli faucet.
 
-# Deployment
+## Deployment
 
 To deploy the smart contracts to the Ethereum network, follow these steps:
 
