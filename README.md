@@ -2,7 +2,7 @@
 
 This project is a Decentralised Crowdfunding Platform built using ReactJS, Vite, JavaScript, Tailwind CSS, Thirdweb SDK, Hardhat, and it can be paired with the Metamask wallet to perform Ethereum transactions on the Goerli testnet of Ethereum.
 
-# Features
+## Features
 
 Allows users to create and manage crowdfunding campaigns.
 Users can contribute funds to campaigns using Ethereum.
