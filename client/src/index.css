@@ -16,3 +16,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(0.8);
 }
+
+@media screen and (max-width: 425px) {
+  .campaign-details-donator-address,
+  .campaign-details-donator-amount {
+    /* font-size: 10px; */
+  }
+  .campaign-details-donator-address {
+    white-space: nowrap;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* border: 1px solid #000000; */
+  }
+}

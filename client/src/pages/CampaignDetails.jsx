@@ -45,14 +45,14 @@ const CampaignDetails = () => {
                 <div className="flex-1 flex-col">
                     <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl" />
                     <div className="relative w-full h-[5px] bg-[#3a3a43] mt-2">
-                        <div className="absolute h-full bg-[#4acd8d]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected)}%`, maxWidth: '100%' }}>
+                        <div className="absolute h-full bg-[#4acd8d]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected * 100)}%`, maxWidth: '100%' }}>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex md:w-[150px] w-full flex-wrap justify-between gap-[30px]">
                     <CountBox title="Days Left" value={remainingDays} />
-                    <CountBox title={`Raised of ${state.target}`} value={state.amountCollected} />
+                    <CountBox title={`Raised of ${state.target} ETH`} value={state.amountCollected * 100} />
                     <CountBox title="Total Backers" value={donators.length} />
                 </div>
             </div>
@@ -60,7 +60,7 @@ const CampaignDetails = () => {
             <div className="mt-[60px] flex lg:flex-row flex-col gap-5">
                 <div className="flex-[2] flex flex-col gap-[40px]">
                     <div>
-                        <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Creator</h4>
+                        <h3 className="campaign-details-title font-epilogue font-semibold text-[1rem] lg:text-[2rem] text-white uppercase mb-1">{state.title}</h3>
 
                         <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
                             <div className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
@@ -82,13 +82,16 @@ const CampaignDetails = () => {
                     </div>
 
                     <div>
-                        <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Donators</h4>
+                        <div className='flex justify-between'>
+                            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Donators</h4>
+                            <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">{donators.length} Donations</h4>
+                        </div>
 
                         <div className="mt-[20px] flex flex-col gap-4">
                             {donators.length > 0 ? donators.map((item, index) => (
                                 <div key={`${item.donator}-${index}`} className="flex justify-between items-center gap-4">
-                                    <p className="font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator}</p>
-                                    <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation}</p>
+                                    <p className="campaign-details-donator-address font-epilogue font-normal text-[16px] text-[#b2b3bd] leading-[26px] break-ll">{index + 1}. {item.donator}</p>
+                                    <p className="campaign-details-donator-amount font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] break-ll">{item.donation} ETH</p>
                                 </div>
                             )) : (
                                 <p className="font-epilogue font-normal text-[16px] text-[#808191] leading-[26px] text-justify">No donators yet. Be the first one!</p>
@@ -107,9 +110,9 @@ const CampaignDetails = () => {
                         <div className="mt-[30px]">
                             <input
                                 type="number"
-                                placeholder="ETH 0.01"
-                                min={0.01}
-                                step={0.01}
+                                placeholder="ETH 0.001 = INR 147.34"
+                                min={0.001}
+                                step={0.001}
                                 className="w-full py-[10px] sm:px-[20px] px-[15px] outline-none border-[1px] border-[#3a3a43] bg-transparent font-epilogue text-white text-[18px] leading-[30px] placeholder:text-[#4b5264] rounded-[10px]"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
